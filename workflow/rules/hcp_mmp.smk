@@ -58,7 +58,7 @@ rule gen_midthickness:
         white = bids(root='results/hcp_mmp',subject='{subject}',hemi='{hemi}',suffix='white.surf.gii',space='{space}'),
         pial = bids(root='results/hcp_mmp',subject='{subject}',hemi='{hemi}',suffix='pial.surf.gii',space='{space}')
     output: 
-        midthickness = bids(root='results/hcp_mmp',subject='{subject}',hemi='{hemi}',suffix='midthickness.surf.gii',space='{space}')
+        midthickness = bids(root='results/hcp_mmp',subject='{subject}',hemi='{hemi}',suffix='midthickness.surf.gii',space='{space,fsaverage|native}')
     container: config['singularity']['connectome_workbench']
     threads: 8
     log: 'logs/gen_midthickness/sub-{subject}_{hemi}_{space}.log'
